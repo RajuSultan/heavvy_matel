@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const PurchaseModal = ({ purchaseProduct }) => {
     // console.log(purchaseProduct);
+    const navigate = useNavigate();
     const [user] = useAuthState(auth);
     // console.log(user)
     // console.log(user?.email)
@@ -27,7 +29,11 @@ const PurchaseModal = ({ purchaseProduct }) => {
             body: JSON.stringify(cartItem)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data);
+                navigate(`/purchase/${purchaseProduct._id}`)
+
+            })
 
     };
     return (

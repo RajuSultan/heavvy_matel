@@ -1,11 +1,14 @@
 import { signOut } from 'firebase/auth';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import User from '../Alluser/User/User';
+import Order from './Order/Order';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
+    const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {
         fetch(`http://localhost:5000/cart?email=${user.email}`, {
@@ -24,11 +27,29 @@ const MyOrders = () => {
                 }
                 return res.json()
             })
-            .then(data => console.log(data))
+            .then(data => setOrders(data))
     }, [])
     return (
         <div>
-            from My Orders
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Job</th>
+                            <th>Favorite Color</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            orders?.map(user => <Order key={user._id} user={user}></Order>)
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

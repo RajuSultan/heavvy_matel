@@ -47,7 +47,7 @@ const Resister = () => {
     useEffect(() => {
         // console.log(verificationError);
 
-        if (token) {
+        if (user) {
             // console.log(user);
             navigate('/');
 
