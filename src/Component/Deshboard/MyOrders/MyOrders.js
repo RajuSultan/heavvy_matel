@@ -30,15 +30,15 @@ const MyOrders = () => {
             .then(data => setOrders(data))
     }, [])
     return (
-        <div>
-            <div className="overflow-x-auto">
+        <div className='mx-16 my-20' >
+            <div style={{ borderBottom: "1px solid black" }} className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>E-mail</th>
+                            <th>Payment Position</th>
                         </tr>
                     </thead>
                     <tbody>

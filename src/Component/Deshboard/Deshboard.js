@@ -9,15 +9,15 @@ const Deshboard = () => {
     const [admin] = useAdmin(user);
     // console.log(admin.admin);
     return (
-        <div>
+        <div className='my-32 '>
             <div className="navbar bg-base-100 justify-center">
-                <div className="navbar-center  lg:flex">
+                <div className="navbar-center  lg:flex ">
                     <ul className="menu menu-horizontal p-0">
-                        <li><Link to="/deshboard/myprofile">My Profile</Link></li>
-                        <li><Link to="/deshboard/myorders">My Orders</Link></li>
-                        <li><Link to="/deshboard/addreviews">Add Reviews</Link></li>
+                        <li className='font-bold font-sans'><Link to="/deshboard/myprofile">My Profile</Link></li>
+                        <li className='font-bold font-sans'><Link to="/deshboard/myorders">My Orders</Link></li>
+                        <li className='font-bold font-sans '><Link to="/deshboard/addreviews">Add Reviews</Link></li>
                         {
-                            admin.admin && <li><Link to="/deshboard/alluser">All User</Link></li>
+                            admin.admin && <li className='font-bold  font-sans'><Link to="/deshboard/alluser">All User</Link></li>
                         }
                     </ul>
                 </div>

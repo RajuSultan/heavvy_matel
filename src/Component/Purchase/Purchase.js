@@ -36,7 +36,7 @@ const Purchase = () => {
                 </div>
             </div>
             {
-                purchaseProduct && <PurchaseModal key={purchaseProduct._id} purchaseProduct={purchaseProduct} ></PurchaseModal>
+                purchaseProduct && <PurchaseModal key={purchaseProduct._id} purchaseProduct={purchaseProduct} id={id}></PurchaseModal>
             }
 
         </div>

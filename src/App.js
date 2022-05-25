@@ -17,10 +17,11 @@ import Alluser from './Component/Deshboard/Alluser/Alluser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './Component/Share/RequireAuth/RequireAdmin';
+import Payment from './Component/Deshboard/Payment/Payment';
 
 function App() {
   return (
-    <div className="mx-16">
+    <div className="">
       <Navber></Navber>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -41,6 +42,7 @@ function App() {
           <Route path='addreviews' element={<AddReview></AddReview>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='alluser' element={<RequireAdmin>
             <Alluser></Alluser>
           </RequireAdmin>}></Route>

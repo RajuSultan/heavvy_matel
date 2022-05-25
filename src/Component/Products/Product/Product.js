@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
+    console.log(product);
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -17,7 +18,7 @@ const Product = ({ product }) => {
                         <div className="badge badge-outline">Products</div>
                     </div>
                     <Link to={`/purchase/${product._id}`}>
-                        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Perchese</button>
+                        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-primary">Perchese</button>
                     </Link>
                 </div>
             </div>

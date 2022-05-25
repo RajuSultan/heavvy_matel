@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
 
-const PurchaseModal = ({ purchaseProduct }) => {
+
+const PurchaseModal = ({ purchaseProduct, id }) => {
     // console.log(purchaseProduct);
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
@@ -16,8 +18,10 @@ const PurchaseModal = ({ purchaseProduct }) => {
         const email = user.email;
         const name = purchaseProduct.name;
         const userName = user.displayName;
+        const price = purchaseProduct.price;
+        const img = purchaseProduct.img
 
-        const cartItem = { phone, quantity, email, name, userName }
+        const cartItem = { phone, quantity, email, name, userName, price, img }
         console.log(cartItem);
 
 
@@ -31,7 +35,8 @@ const PurchaseModal = ({ purchaseProduct }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                navigate(`/purchase/${purchaseProduct._id}`)
+                toast.success("Product add Successfully")
+                navigate(`/purchase/${id}`)
 
             })
 
