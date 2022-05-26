@@ -20,6 +20,7 @@ import RequireAdmin from './Component/Share/RequireAuth/RequireAdmin';
 import Payment from './Component/Deshboard/Payment/Payment';
 import Edit from './Component/Deshboard/MyProfile/Edit/Edit';
 import AddProduct from './Component/Deshboard/AddProduct/AddProduct';
+import Fortfolio from './Component/Fortfolio/Fortfolio';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/resister' element={<Resister></Resister>}></Route>
         <Route path='/edit' element={<Edit></Edit>}></Route>
+        <Route path='/fortfolio' element={<Fortfolio></Fortfolio>}></Route>
 
         <Route path='/purchase/:id' element={
           <RequireAuth>

@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Loading from '../Share/Loading';
+import icon from '../../images/icon.png';
 
 const Navber = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -24,7 +24,7 @@ const Navber = () => {
                         </label>
                         <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52  font-bold">
                             <li className='text-2xl'><Link to='/'>Home</Link ></li>
-                            <li className='text-2xl'><Link to='/about'>About</Link ></li>
+                            <li className='text-2xl'><Link to='/forfolio'>My fortfolio</Link ></li>
                             {
                                 user && <li className='text-2xl'><Link to='/deshboard' >Deshboard</Link ></li>
                             }
@@ -45,12 +45,12 @@ const Navber = () => {
 
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case  text-xl text-white font-bold " >Menufacturer</Link>
+                    <Link to='/' className="btn btn-ghost normal-case  text-xl text-white font-bold " > <img src={icon} alt="" /> Heavvy Metal</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu text-white font-bold menu-horizontal p-0">
                         <li className=''><Link to='/'>Home</Link ></li>
-                        <li className=''><Link to='/about'>About</Link ></li>
+                        <li className=''><Link to='/fortfolio'>My Fortfolio</Link ></li>
                         {
                             user && <li className=''><Link to='/deshboard'>Deshboard</Link ></li>
                         }

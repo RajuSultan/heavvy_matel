@@ -14,8 +14,14 @@ const Deshboard = () => {
                 <div className="navbar-center  lg:flex ">
                     <ul className="menu menu-horizontal grid sm:grid-cols-2 lg:grid-cols-5 p-0">
                         <li className='font-bold font-sans'><Link to="/deshboard/myprofile">My Profile</Link></li>
-                        <li className='font-bold font-sans'><Link to="/deshboard/myorders">My Orders</Link></li>
-                        <li className='font-bold font-sans '><Link to="/deshboard/addreviews">Add Reviews</Link></li>
+
+
+                        {
+                            !admin.admin && <li className='font-bold font-sans'><Link to="/deshboard/myorders">My Orders</Link></li>
+                        }
+                        {
+                            !admin.admin && <li className='font-bold font-sans '><Link to="/deshboard/addreviews">Add Reviews</Link></li>
+                        }
                         {
                             admin.admin && <li className='font-bold  font-sans'><Link to="/deshboard/alluser">All User</Link></li>
                         }
