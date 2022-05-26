@@ -14,39 +14,39 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <div class="  bg-base-200 px-32 py-16">
-                <div class="flex flex-col lg:flex-row">
-                    <img style={{ width: '200px', height: '200px' }} src={profileData?.yourimage} class="max-w-sm rounded-lg shadow-2xl mr-16 " alt='' />
-                    <div className='h-100'>
-                        <h1 class="text-5xl font-bold">{
+            <div className="  bg-base-200  py-16">
+                <div style={{ margin: '8% 20%' }} className="flex flex-col lg:flex-row ">
+                    <img style={{ width: '200px', height: '200px' }} src={profileData?.yourimage} className="max-w-sm mr-16 rounded-lg shadow-2xl  " alt='' />
+                    <div className='h-100 '>
+                        <h1 className="text-5xl font-bold">{
                             user?.displayName ? <span className='uppercase'>{user?.displayName}</span> : <span>
                                 {
                                     profileData?.name ? <span>{profileData?.name}</span> : 'Add Your Name!'
                                 }
                             </span>
                         }</h1>
-                        <p class="py-6">{
+                        <p className="py-6">{
                             profileData?.self ? <span>{profileData?.self}</span> : "Add your self!"
                         }</p>
-                        <p class="py-6">E-mail : {
+                        <p className="py-6">E-mail : {
                             profileData?.email ? <span>{profileData?.email}</span> : "Add your email!"
                         }</p>
-                        <p class="py-6">Country : {
+                        <p className="py-6">Country : {
                             profileData?.counrty ? <span>{profileData?.counrty}</span> : "Add your counrty!"
                         }</p>
-                        <p class="py-6">House : {
+                        <p className="py-6">House : {
                             profileData?.house ? <span>{profileData?.house}</span> : "Add your house!"
                         }</p>
-                        <p class="py-6">Religion : {
+                        <p className="py-6">Religion : {
                             profileData?.religion ? <span>{profileData?.religion}</span> : "Add your religion!"
                         }</p>
-                        <p class="py-6"> Gender : {
+                        <p className="py-6"> Gender : {
                             profileData?.gender ? <span>{profileData?.gender}</span> : "Add your gender!"
                         }</p>
-                        <p class="py-6">Social Link : {
+                        <p className="py-6">Social Link : {
                             profileData?.social ? <span>{profileData?.social}</span> : "Add your social!"
                         }</p>
-                        <Link to='/edit'><button class="btn btn-primary">Edit Profile</button></Link>
+                        <Link to='/edit'><button className="btn btn-primary">Edit Profile</button></Link>
                     </div>
                 </div>
             </div>
