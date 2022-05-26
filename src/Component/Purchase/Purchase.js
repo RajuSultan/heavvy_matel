@@ -43,6 +43,9 @@ const Purchase = () => {
                         <h1 className="text-5xl font-bold">{purchaseProduct?.name}</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                         <p>category : {purchaseProduct?.category}</p>
+                        <p>category : {purchaseProduct?.category}</p>
+                        <p>category : {purchaseProduct?.category}</p>
+                        <p>category : {purchaseProduct?.category}</p>
                         <label htmlFor="booking-modal" className="btn   btn-primary text-white ">Go for Order</label>
                     </div>
                     <img src={purchaseProduct?.img} className="w-100 rounded-lg shadow-2xl" alt='' />
