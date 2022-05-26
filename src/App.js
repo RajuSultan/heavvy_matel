@@ -18,6 +18,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './Component/Share/RequireAuth/RequireAdmin';
 import Payment from './Component/Deshboard/Payment/Payment';
+import Edit from './Component/Deshboard/MyProfile/Edit/Edit';
+import AddProduct from './Component/Deshboard/AddProduct/AddProduct';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/resister' element={<Resister></Resister>}></Route>
+        <Route path='/edit' element={<Edit></Edit>}></Route>
+
         <Route path='/purchase/:id' element={
           <RequireAuth>
             <Purchase></Purchase>
@@ -46,6 +50,8 @@ function App() {
           <Route path='alluser' element={<RequireAdmin>
             <Alluser></Alluser>
           </RequireAdmin>}></Route>
+          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 

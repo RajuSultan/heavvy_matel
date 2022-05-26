@@ -8,7 +8,7 @@ const Alluser = () => {
         .then(data => setUsers(data))
     // console.log(users);
     return (
-        <div>
+        <div style={{ borderBottom: "1px solid black" }} className='mx-20 my-20'>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>

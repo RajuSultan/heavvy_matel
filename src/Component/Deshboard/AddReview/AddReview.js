@@ -5,7 +5,7 @@ import auth from '../../../firebase.init';
 
 const AddReview = () => {
     const [user] = useAuthState(auth);
-    console.log(user.displayName);
+    // console.log(user.displayName);
 
     const handlaSubmit = (event) => {
         event.preventDefault();
@@ -25,15 +25,15 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 toast.success("Review add Successfully!")
             })
 
     }
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse px-20">
+            <div className="hero w-100 min-h-screen bg-base-200">
+                <div className="hero-content flex-col lg:flex-row-reverse ">
                     <div className="text-center lg:text-left ">
                         <h1 className="text-5xl font-bold">Add a Review!</h1>
                         <p className="py-6">A review is an evaluation of a publication, product, service, or company or a critical take on current affairs in literature, politics or culture. In addition to a critical evaluation, the review's author may assign the work a rating to indicate its relative merit.</p>
