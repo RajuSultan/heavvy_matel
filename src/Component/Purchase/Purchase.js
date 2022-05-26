@@ -46,12 +46,13 @@ const Purchase = () => {
 
                             <p><span className='font-bold'>Category :</span> {purchaseProduct?.category}</p>
                             <p><span className='font-bold'>Price :</span> {purchaseProduct?.price}</p>
-                            <p><span className='font-bold'>Ratings :</span> {purchaseProduct?.ratings}</p>
+                            <p><span className='font-bold'>Ratings :</span> {purchaseProduct?.ratings}/5</p>
                             <p><span className='font-bold'>Seller :</span> {purchaseProduct?.seller}</p>
                             <p><span className='font-bold'>Shipping :</span> {purchaseProduct?.shipping}</p>
                             <p><span className='font-bold'>Stock :</span> {purchaseProduct?.stock}</p>
-                            <p><span className='font-bold'>Minimum Order Quantity :</span> {purchaseProduct?.minimum_order_quantity}</p>
+
                         </div>
+                        <p className='mt-8'><span className='font-bold '>Minimum Order Quantity :</span> {purchaseProduct?.minimum_order_quantity}</p>
 
                         <label htmlFor="booking-modal" className="btn   btn-primary text-white text-center my-8 ml-20 ">Go for Order</label>
                     </div>

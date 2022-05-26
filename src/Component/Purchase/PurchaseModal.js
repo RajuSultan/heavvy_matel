@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -11,6 +11,8 @@ const PurchaseModal = ({ purchaseProduct, id }) => {
     const [user] = useAuthState(auth);
     // console.log(user)
     // console.log(user?.email)
+    const [quantityError, setQuantityError] = useState('');
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const phone = event.target.phone.value;
@@ -25,20 +27,24 @@ const PurchaseModal = ({ purchaseProduct, id }) => {
         // console.log(cartItem);
 
 
-        fetch('https://quiet-taiga-42147.herokuapp.com/cart', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(cartItem)
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                toast.success("Product add Successfully")
-                navigate(`/purchase/${id}`)
-
+        if (quantity <= purchaseProduct.stock) {
+            fetch('https://quiet-taiga-42147.herokuapp.com/cart', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(cartItem)
             })
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    toast.success("Product add Successfully")
+                    navigate(`/purchase/${id}`)
+
+                })
+        } else {
+            setQuantityError(`Set your quantity again available Quantity is ${purchaseProduct.stock}`)
+        }
 
     };
     return (
