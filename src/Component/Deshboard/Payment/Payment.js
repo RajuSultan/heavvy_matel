@@ -16,7 +16,7 @@ const Payment = () => {
     const { id } = useParams();
     const [selectedProduct, setSelectedProduct] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/payment/${id}`)
+        fetch(`https://quiet-taiga-42147.herokuapp.com/payment/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSelectedProduct(data)

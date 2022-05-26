@@ -8,7 +8,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const email = user.email;
     if (email) {
-        fetch(`http://localhost:5000/profile/${email}`)
+        fetch(`https://quiet-taiga-42147.herokuapp.com/profile/${email}`)
             .then(res => res.json())
             .then(data => setProfileData(data))
     }

@@ -4,7 +4,7 @@ import auth from '../../../firebase.init';
 
 const useTokens = (user) => {
     const [userA] = useAuthState(auth);
-    console.log(user);
+    // console.log(user);
 
     const [token, setToken] = useState("");
 
@@ -12,9 +12,9 @@ const useTokens = (user) => {
         const email = user?.email;
         const name = user?.displayName;
         const currentUser = { email: email, name: name };
-        console.log(email);
+        // console.log(email);
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://quiet-taiga-42147.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -28,7 +28,7 @@ const useTokens = (user) => {
                     localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
                 })
-            // fetch(`http://localhost:5000/user`)
+            // fetch(`https://quiet-taiga-42147.herokuapp.com/user`)
             //     .then(res => res.json())
             //     .then(data => console.log(data))
         }

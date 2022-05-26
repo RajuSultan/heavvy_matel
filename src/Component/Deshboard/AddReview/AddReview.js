@@ -16,7 +16,7 @@ const AddReview = () => {
         const review = { name, url, opinion, ratings };
         console.log(name, url, opinion, ratings);
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://quiet-taiga-42147.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

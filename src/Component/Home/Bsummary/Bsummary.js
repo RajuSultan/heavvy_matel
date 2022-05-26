@@ -40,6 +40,17 @@ const Bsummary = () => {
                 </div>
 
             </div>
+
+
+            <div class="hero  bg-base-200">
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Hello there</h1>
+                        <p class="py-6">A business is defined as an organization or enterprising entity engaged in commercial, industrial, or professional activities. Businesses can be for-profit entities or non-profit organizations. Business types range from limited liability companies, sole proprietorships, corporations, and partnerships.</p>
+                        <button class="btn btn-primary">Get Started With Us</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

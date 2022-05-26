@@ -20,7 +20,7 @@ const Edit = () => {
         const profile = { name, counrty, self, house, gender, religion, married, social, email, yourimage };
         console.log(profile, email);
         if (profile || email) {
-            fetch(`http://localhost:5000/profile/${email}`, {
+            fetch(`https://quiet-taiga-42147.herokuapp.com/profile/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

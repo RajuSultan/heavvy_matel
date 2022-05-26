@@ -22,10 +22,10 @@ const PurchaseModal = ({ purchaseProduct, id }) => {
         const img = purchaseProduct.img
 
         const cartItem = { phone, quantity, email, name, userName, price, img }
-        console.log(cartItem);
+        // console.log(cartItem);
 
 
-        fetch('http://localhost:5000/cart', {
+        fetch('https://quiet-taiga-42147.herokuapp.com/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const PurchaseModal = ({ purchaseProduct, id }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 toast.success("Product add Successfully")
                 navigate(`/purchase/${id}`)
 

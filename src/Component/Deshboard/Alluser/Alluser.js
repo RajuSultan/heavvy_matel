@@ -3,7 +3,7 @@ import User from './User/User';
 
 const Alluser = () => {
     const [users, setUsers] = useState([]);
-    fetch('http://localhost:5000/user')
+    fetch('https://quiet-taiga-42147.herokuapp.com/user')
         .then(res => res.json())
         .then(data => setUsers(data))
     // console.log(users);

@@ -21,7 +21,7 @@ const AddProduct = () => {
         const addproduct = { name, price, description, stock, ratings, seller, shipping, minimum_order_quantity, email, img };
         console.log(addproduct, email);
         if (addproduct || email) {
-            fetch(`http://localhost:5000/addproduct`, {
+            fetch(`https://quiet-taiga-42147.herokuapp.com/addproduct`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

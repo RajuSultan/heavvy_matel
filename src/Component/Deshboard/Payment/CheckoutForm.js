@@ -16,7 +16,7 @@ const CheckoutForm = ({ price, name, id }) => {
     const raju = 12;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://quiet-taiga-42147.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -99,7 +99,7 @@ const CheckoutForm = ({ price, name, id }) => {
                 productId: id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/cart/${id}`, {
+            fetch(`https://quiet-taiga-42147.herokuapp.com/cart/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
