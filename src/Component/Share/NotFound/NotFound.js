@@ -2,8 +2,8 @@ import React from 'react';
 
 const NotFound = () => {
     return (
-        <div className='mx-auto'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShzREof7Q1DCvo9JU6d-cO00jqi9Kdjq_pNw&usqp=CAU" alt="" />
+        <div className='mt-12 '>
+            <img className='w-100 mx-auto min-h-screen' src="https://media.istockphoto.com/vectors/concept-404-error-page-flat-cartoon-style-vector-illustration-vector-id1149316411?k=20&m=1149316411&s=612x612&w=0&h=wzSCBQVVh76LWzeEQP01DDEhpm983Y6_tsqlZ46goZ0=" alt="" />
 
         </div>
     );
