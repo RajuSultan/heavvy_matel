@@ -37,16 +37,23 @@ const Purchase = () => {
                 </div>
             </div> */}
             <div className="hero min-h-screen bg-base-200 my-16">
-                <div style={{ width: '70%' }} className="hero-content flex-col lg:flex-row-reverse ">
+                <div style={{ width: '80%' }} className="hero-content flex-col lg:flex-row-reverse ">
 
-                    <div>
+                    <div className='m-4'>
                         <h1 className="text-5xl font-bold">{purchaseProduct?.name}</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <p>category : {purchaseProduct?.category}</p>
-                        <p>category : {purchaseProduct?.category}</p>
-                        <p>category : {purchaseProduct?.category}</p>
-                        <p>category : {purchaseProduct?.category}</p>
-                        <label htmlFor="booking-modal" className="btn   btn-primary text-white ">Go for Order</label>
+                        <p className="py-6">{purchaseProduct?.description}</p>
+                        <div className='grid lg:grid-cols-2 gap-10'>
+
+                            <p><span className='font-bold'>Category :</span> {purchaseProduct?.category}</p>
+                            <p><span className='font-bold'>Price :</span> {purchaseProduct?.price}</p>
+                            <p><span className='font-bold'>Ratings :</span> {purchaseProduct?.ratings}</p>
+                            <p><span className='font-bold'>Seller :</span> {purchaseProduct?.seller}</p>
+                            <p><span className='font-bold'>Shipping :</span> {purchaseProduct?.shipping}</p>
+                            <p><span className='font-bold'>Stock :</span> {purchaseProduct?.stock}</p>
+                            <p><span className='font-bold'>Minimum Order Quantity :</span> {purchaseProduct?.minimum_order_quantity}</p>
+                        </div>
+
+                        <label htmlFor="booking-modal" className="btn   btn-primary text-white text-center my-8 ml-20 ">Go for Order</label>
                     </div>
                     <img src={purchaseProduct?.img} className="w-100 rounded-lg shadow-2xl" alt='' />
                 </div>
